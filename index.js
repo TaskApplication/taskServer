@@ -4,7 +4,7 @@ const routes = require('./routes');
 const parseResponse = require('./v1/parseResponse');
 const sequelize = require('./db');
 const app = express();
-const PORT = 5000;
+const PORT = +process.env.PORT || 5000;
 
 // routes
 parseResponse(app);
