@@ -3,13 +3,14 @@ const express = require('express');
 const routes = require('./routes');
 const parseResponse = require('./v1/parseResponse');
 const sequelize = require('./db');
+const cors = require('cors');
 const app = express();
 const PORT = +process.env.PORT || 5000;
 
 // routes
 parseResponse(app);
+cors(app);
 routes(app);
-
 
 
 (async () => {
